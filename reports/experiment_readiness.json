@@ -1,6 +1,6 @@
 {
   "project": "Rare Emotion Detection",
-  "generated_at": "2026-10-08T13:57:53.999521+00:00",
+  "generated_at": "2026-10-28T04:33:20.767104+00:00",
   "core_dataset": {
     "split_files": {
       "train": {
@@ -114,72 +114,52 @@
     }
   },
   "condition_C": {
-    "status": "BLOCKED",
-    "blockers": [
-      "pride synthetic examples missing",
-      "nervousness synthetic examples missing"
-    ]
+    "status": "READY",
+    "blockers": []
   },
   "condition_D": {
-    "status": "BLOCKED",
-    "blockers": [
-      "pride accepted synthetic examples missing",
-      "nervousness accepted synthetic examples missing"
-    ]
+    "status": "READY",
+    "blockers": []
   },
   "synthetic_summary": {
-    "total": 30,
+    "total": 116,
     "by_emotion": {
-      "grief": 20,
-      "pride": 0,
-      "relief": 10,
-      "nervousness": 0
+      "grief": 29,
+      "pride": 29,
+      "relief": 29,
+      "nervousness": 29
     },
     "accepted_by_emotion": {
-      "grief": 20,
-      "pride": 0,
-      "relief": 10,
-      "nervousness": 0
+      "grief": 25,
+      "pride": 25,
+      "relief": 26,
+      "nervousness": 25
     },
     "rejected_by_emotion": {
-      "grief": 0,
-      "pride": 0,
-      "relief": 0,
-      "nervousness": 0
+      "grief": 4,
+      "pride": 4,
+      "relief": 3,
+      "nervousness": 4
     },
     "acceptance_rate_by_emotion": {
-      "grief": 1.0,
-      "pride": null,
-      "relief": 1.0,
-      "nervousness": null
+      "grief": 0.8620689655172413,
+      "pride": 0.8620689655172413,
+      "relief": 0.896551724137931,
+      "nervousness": 0.8620689655172413
     },
-    "accepted_total": 30,
-    "rejected_total": 0,
-    "overall_acceptance_rate": 1.0,
+    "accepted_total": 101,
+    "rejected_total": 15,
+    "overall_acceptance_rate": 0.8706896551724138,
     "models": [
-      "gemini-3.8-flash"
+      "human"
     ],
     "files": [
       {
-        "file": "vad_filtered_candidates_40.csv",
-        "rows": 20,
-        "metadata_file": "vad_filtered_candidates_40.metadata.json",
-        "model": "gemini-3.8-flash",
-        "prompt_version": "rare-emotion-candidates-v1.0"
-      },
-      {
-        "file": "vad_filtered_candidates_batch2.csv",
-        "rows": 10,
-        "metadata_file": "vad_filtered_candidates_batch2.metadata.json",
-        "model": "gemini-3.8-flash",
-        "prompt_version": "rare-emotion-batch2-ambiguous-v1.0"
-      },
-      {
-        "file": "vad_filtered_candidates_completion.csv",
-        "rows": 0,
-        "metadata_file": "vad_filtered_candidates_completion.metadata.json",
-        "model": "gemini-3.8-flash",
-        "prompt_version": "rare-emotion-completion-v1.0"
+        "file": "vad_filtered_candidates_handcrafted.csv",
+        "rows": 116,
+        "metadata_file": "vad_filtered_candidates_handcrafted.metadata.json",
+        "model": "human",
+        "prompt_version": "rare-emotion-synthetic-v2.0"
       }
     ],
     "integrity": {
@@ -246,17 +226,14 @@
   },
   "experiment_execution_status": "READY",
   "experiment_execution_blockers": [],
-  "c_vs_d_difference": false,
+  "c_vs_d_difference": true,
   "c_vs_d_diagnostic": {
-    "different": false,
-    "status": "NOT YET DEMONSTRATED",
-    "explanation": "Current generated candidates do not contain rejected examples, so the unfiltered and VAD-filtered synthetic conditions would currently be identical for the available synthetic data."
+    "different": true,
+    "status": "DEMONSTRATED",
+    "explanation": "At least one generated candidate is rejected, so C includes candidates excluded from D."
   },
-  "overall_status": "BLOCKED",
-  "overall_blockers": [
-    "Condition C is blocked",
-    "Condition D is blocked"
-  ],
+  "overall_status": "READY",
+  "overall_blockers": [],
   "next_required_action": "Obtain genuine synthetic examples for missing target emotions and naturally occurring VAD-rejected candidates before constructing C/D.",
   "training_performed": false,
   "synthetic_generation_performed": false,

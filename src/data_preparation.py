@@ -53,8 +53,7 @@ TARGET_LABEL_IDS = {
     for emotion in TARGET_EMOTIONS
 }
 SYNTHETIC_PATHS = (
-    Path("data/synthetic/vad_filtered_candidates_40.csv"),
-    Path("data/synthetic/vad_filtered_candidates_batch2.csv"),
+    Path("data/synthetic/vad_filtered_candidates_handcrafted.csv"),
 )
 
 

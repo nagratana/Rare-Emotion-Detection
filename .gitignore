@@ -45,3 +45,7 @@ Rare_Emotion_Detection_EDA.ipynb
 src/training_backup.py
 
 data/
+scripts/
+0*.py
+generate_synthetic_*.py
+test_gemini_*.py
